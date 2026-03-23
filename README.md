@@ -58,3 +58,47 @@ volume predicts transaction volume 1–4 weeks in advance.
 ---
 
 ## Project Structure
+```
+fashion-trend-forecasting/
+├── data/
+│   ├── raw/          ← H&M CSVs (not committed, download from Kaggle)
+│   └── processed/    ← cleaned weekly aggregations
+├── notebooks/
+│   └── exploration.ipynb   ← EDA, modeling, findings
+├── python/
+│   ├── load_data.py        ← data pipeline
+│   ├── forecast.py         ← Prophet model + baseline + evaluation
+│   └── trends.py           ← Google Trends + cross-correlation
+├── docs/                   ← GitHub Pages dashboard + chart outputs
+├── requirements.txt
+└── README.md
+```
+
+## Data
+
+H&M Personalized Fashion Recommendations dataset via Kaggle — 31.7M transactions, 
+105,542 articles, September 2018 to September 2020.
+
+Google Trends data pulled via pytrends, filtered to United States, same date range.
+
+---
+
+## How to Run
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Download H&M data from Kaggle (requires API key)
+python python/load_data.py
+
+# Run forecasting model
+python python/forecast.py
+
+# Run Google Trends analysis
+python python/trends.py
+```
+
+---
+
+*Built as part of a fashion tech portfolio. Part of a broader project series 
+exploring sustainability, supply chain transparency, and retail analytics.*
