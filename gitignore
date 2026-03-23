@@ -1,0 +1,10 @@
+data/raw/
+*.csv
+*.zip
+*.h5
+__pycache__/
+.ipynb_checkpoints/
+.DS_Store
+
+API Code
+KGAT_065cbfd14fc9201e031339c8bf115307
